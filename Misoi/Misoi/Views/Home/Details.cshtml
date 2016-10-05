@@ -1,0 +1,66 @@
+﻿@model Misoi.Models.LoadedImage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div style="overflow: hidden">
+    <div class="container col-md-12">
+        <div>
+            @Html.LabelFor(model => model.Name)
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Height)
+            @Html.DisplayFor(model => model.Height)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Width)
+            @Html.DisplayFor(model => model.Width)
+        </div>
+        <div style="padding: 5px; border: 2px solid grey; width: 100%; border-radius: 5px;">
+            <img style="width: 100%" src="@Model.ImagePath"/>
+        </div>
+    </div>
+    <input type="text" id="modelId" value="@Model.Id" style="display: none"/>
+    
+    <div class="container col-md-12" id="chartContainer">
+        <button type="button" class="btn btn-success btn-show-chart" id="showChart" style="visibility: visible">Show Chart</button>                  
+        <div id="imageContainer" class="hide-container chart-container">
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1063 435" width="1063px" height="400px" id="imageChart">
+            </svg>
+        </div>
+    </div>
+    <div class="container col-md-12" id="negativeContainer">
+        <button type="button" class="btn btn-success" id="addNegative" style="margin-top: 10px; margin-bottom: 10px">Negative</button>
+        <div style="padding: 5px; border: 2px solid grey; width: 100%; border-radius: 5px;">
+            <img id="negativeImg" style="width: 100%"/>
+        </div>
+    </div>
+    <div class="container col-md-12" id="chartContainerForNegative">
+        <button type="button" class="btn btn-success btn-show-chart" id="showChartForNegative">Show Chart</button>
+        <div id="negativeChartContainer" class="hide-container chart-container">
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1063 435" width="1063px" height="400px" id="negativeChart">
+            </svg>
+        </div>
+    </div>
+    <div class="container col-md-12" id="filteredContainer">
+        <button type="button" class="btn btn-success" id="addFilter" style="margin-top: 10px; margin-bottom: 10px">Filter</button>
+        <div style="padding: 5px; border: 2px solid grey; width: 100%; border-radius: 5px;">
+            <img id="filteredImg" style="width: 100%"/>
+        </div>
+    </div>
+    <div class="container col-md-12" id="chartContainerForFiltered">
+        <button type="button" class="btn btn-success btn-show-chart" id="showChartForFilter">Show Chart</button>
+        <div id="filteredChartContainer" class="hide-container chart-container">
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1063 435" width="1063px" height="400px" id="filteredChart">
+            </svg>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Images")
+</p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

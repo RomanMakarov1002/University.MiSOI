@@ -1,0 +1,82 @@
+﻿body {
+}
+/*.chart {
+  background: white;
+  width: 500px;
+  height: 100px;
+  border-left: 1px dotted #555;
+  border-bottom: 1px dotted #555;
+  padding: 20px 20px 20px 0;
+}*/
+
+.bar {
+  /*fill: #aaa;*/
+  fill: #39CCCC;
+  -webkit-transition: fill .3s ease;
+  transition: fill .3s ease;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif;
+}
+.bar text {
+  /*fill: #555;*/
+  fill: #39CCCC;
+}
+
+.chart:hover .bar,
+.chart:focus .bar {
+  fill: #aaa;
+}
+
+.bar:hover,
+.bar:focus {
+  fill: #FF4136 !important;
+}
+.bar:hover text,
+.bar:focus text {
+  fill: #FF4136;
+}
+
+figcaption {
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/**/
+.btn-show-chart {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    visibility: hidden; 
+}
+.hide-container {
+    display: none;
+}
+
+.chart-container {
+    margin-top: 20px !important;
+}
+
+.x-bar, .y-bar {
+    font-size: 10px;
+    color: #001f3f;
+}
+
+.bar-line {
+    stroke: #FF4136;
+    stroke-dasharray: 0;
+    stroke-width: 1;
+}
+
+
+
+.loading-img {
+    background-image: url(../UserContent/loading.gif);
+    width: 128px;
+    height: 128px;
+    background-size: cover;
+}
+
